@@ -1,5 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
 <html>
 
-<h1>Helpitessa's Blog</h1>
+<head>
+    <title>Blog</title>
+    <link rel="stylesheet" href="{% static " css/foundation.css " %}">
+</head>
+
+<body>
+    <section class="row">
+        <header class="large-12 colums">
+            <h1>Helpitessa's Blog</h1>
+            <hr> {% if posts %}
+            <ul>
+                {% for post in posts %}
+                <li><a href="/{{ post.id }}/">{{ post.title }}</a></li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p>No polls are available.</p>
+            {% endif %}
 
 </html>
