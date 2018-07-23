@@ -4,21 +4,36 @@
 
 <head>
     <title>Blog</title>
-    <link rel="stylesheet" href="{% static " css/foundation.css " %}">
+    <link rel="stylesheet" href="{% static 'posts/foundation.css' %}">
+    <link rel="stylesheet" href="{% static 'posts/style.css' %}">
 </head>
 
 <body>
-    <section class="row">
-        <header class="large-12 colums">
-            <h1>Helpitessa's Blog</h1>
-            <hr> {% if posts %}
-            <ul>
-                {% for post in posts %}
-                <li><a href="/{{ post.id }}/">{{ post.title }}</a></li>
-                {% endfor %}
+
+
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <a class="menu-text" id="title_page">Helpitessa's Blog</a>
+        </div>
+        <div class="top-bar-right">
+            <ul class="menu">
+                <li><input type="search" placeholder="Search"></li>
+                <li><button type="button" class="button">Search</button></li>
             </ul>
-            {% else %}
-            <p>No polls are available.</p>
-            {% endif %}
+        </div>
+    </div>
+
+    <div class="grid-x" id="content">
+        {% if posts %}
+        <ul>
+            {% for post in posts %}
+            <li><a href="/{{ post.id }}/">{{ post.title }}</a></li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>No polls are available.</p>
+        {% endif %}
+    </div>
+
 
 </html>
