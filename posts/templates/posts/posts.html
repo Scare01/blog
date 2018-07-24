@@ -2,14 +2,23 @@
 
 {% block content %}
     {% if posts %}
-        <ul>
-            {% for post in posts %}
-                <li>
-                    <a href="/{{ post.id }}/">{{ post.title }}</a>
-                </li>
-            {% endfor %}
-        </ul>
+        {% for post in posts %}
+            <div class="cells" id="begin_post">
+                <div class="cells">
+                    <h1 class="text-center">{{ post.title }}</h1>
+                </div>
+                <div class="cells">
+                    <img>
+                </div>
+                <div class="cells">
+                    <p class="text-center" id="begin_post">{{post.body}}</p>
+                    <a class="text-center" href="/{{ post.id }}">Read full post</a>
+                </div>
+            </div>
+
+        {% endfor %}
+
     {% else %}
-        <p>No polls are available.</p>
+        <p>No posts are available.</p>
     {% endif %}
 {% endblock %}
