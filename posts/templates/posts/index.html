@@ -1,39 +1,24 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html>
-
-<head>
-    <title>Blog</title>
-    <link rel="stylesheet" href="{% static 'posts/foundation.css' %}">
-    <link rel="stylesheet" href="{% static 'posts/style.css' %}">
-</head>
-
-<body>
-
-
-    <div class="top-bar">
-        <div class="top-bar-left">
-            <a class="menu-text" id="title_page">Helpitessa's Blog</a>
+    <head>
+        <title>Blog</title>
+        <link rel="stylesheet" href="{% static 'posts/foundation.css' %}">
+        <link rel="stylesheet" href="{% static 'posts/style.css' %}">
+    </head>
+    <body>
+        <div class="top-bar">
+            <div class="top-bar">
+                <a class="menu-text" id="title_page" href="{% url 'posts' %}">Helpintessa's Blog</a>
+            </div>
+            <div class="top-bar-right">
+                <ul class="menu">
+                    <li>Add social links</li>
+                </ul>
+            </div>
         </div>
-        <div class="top-bar-right">
-            <ul class="menu">
-                <li><input type="search" placeholder="Search"></li>
-                <li><button type="button" class="button">Search</button></li>
-            </ul>
+        <div class="grid-x" id="content">
+            {% block content %}{% endblock %}
         </div>
-    </div>
-
-    <div class="grid-x" id="content">
-        {% if posts %}
-        <ul>
-            {% for post in posts %}
-            <li><a href="/{{ post.id }}/">{{ post.title }}</a></li>
-            {% endfor %}
-        </ul>
-        {% else %}
-        <p>No polls are available.</p>
-        {% endif %}
-    </div>
-
-
-</html>
+    </html>
