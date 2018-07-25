@@ -4,11 +4,11 @@
     {% if posts %}
         {% for post in posts %}
             <div class="cells" id="begin_post">
-                <div class="cells">
+                <div>
                     <h1 class="text-center">{{ post.title }}</h1>
                 </div>
-                <div class="cells text-center">
-                    <img src="/media/{{post.image}}">
+                <div class="text-center">
+                    <img id="image" src="/media/{{post.image}}">
                 </div>
                 <div class="text-center">
                     <p class="text-center" id="begin_post">{{post.body}}</p>

@@ -8,19 +8,19 @@
         <link rel="stylesheet" href="{% static 'posts/style.css' %}">
     </head>
     <body>
-        <header>
-            <div class="top-bar">
-                <div class="top-bar-left ">
-                    <a class="menu-text" id="title_page" href="{% url 'posts' %}">Helpintessa's Blog</a>
-                </div>
-                <div class="top-bar-right">
-                    <ul class="menu">
-                        <li>Add social links</li>
-                    </ul>
-                </div>
+        <header class="top-bar">
+            <div class="top-bar-left ">
+                <a class="menu-text" id="title_page" href="{% url 'posts' %}">Helpintessa's Blog</a>
             </div>
         </header>
+
         <div class="grid-container" id="content">
             {% block content %}{% endblock %}
         </div>
-    </html>
+
+        <footer class="footer">
+            <p class="text-center">Add social link</p>
+        </footer>
+    </div>
+</body>
+</html>
